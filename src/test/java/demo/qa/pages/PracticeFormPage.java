@@ -1,25 +1,25 @@
-package demoqa.pages;
+package demo.qa.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import com.demoqa.pages.components.AfterRegistrationComponent;
-import com.demoqa.pages.components.CalendarComponent;
-import com.demoqa.pages.components.DropdownComponent;
-import com.demoqa.pages.components.UploadFileComponent;
+import demo.qa.pages.components.AfterRegistrationComponent;
+import demo.qa.pages.components.CalendarComponent;
+import demo.qa.pages.components.DropdownComponent;
+import demo.qa.pages.components.UploadFileComponent;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormPage {
 
-    private CalendarComponent calendarComponent = new CalendarComponent();
-    private AfterRegistrationComponent afterRegistrationComponent = new AfterRegistrationComponent();
-    private DropdownComponent dropdownComponent = new DropdownComponent();
-    private UploadFileComponent uploadFileComponent = new UploadFileComponent();
+    private final CalendarComponent calendarComponent = new CalendarComponent();
+    private final AfterRegistrationComponent afterRegistrationComponent = new AfterRegistrationComponent();
+    private final DropdownComponent dropdownComponent = new DropdownComponent();
+    private final UploadFileComponent uploadFileComponent = new UploadFileComponent();
 
     //    Elements
-    private SelenideElement
-            firstnameInput = $("#firstName"),
-            lastnameInput = $("#lastName");
+    private final SelenideElement
+            firstnameInput = $("#firstName");
+    private final SelenideElement lastnameInput = $("#lastName");
 
     //    Actions, fill form
     public PracticeFormPage openPage() {
@@ -87,21 +87,15 @@ public class PracticeFormPage {
 
     }
 
-    public PracticeFormPage setState(String state) {
+    public PracticeFormPage setStateAndCity(String state, String city) {
         dropdownComponent.setState(state);
-        return this;
-
-    }
-
-    public PracticeFormPage setCity(String city) {
         dropdownComponent.setCity(city);
         return this;
 
     }
 
-    public PracticeFormPage submitForm() {
+    public void submitForm() {
         $("#submit").click();
-        return this;
 
     }
 
