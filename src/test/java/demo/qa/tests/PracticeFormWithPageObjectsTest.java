@@ -3,6 +3,8 @@ package demo.qa.tests;
 import demo.qa.pages.PracticeFormPage;
 import org.junit.jupiter.api.Test;
 
+import static demo.qa.tests.TestData.*;
+
 public class PracticeFormWithPageObjectsTest extends TestBase{
 
     PracticeFormPage practiceFormPage = new PracticeFormPage();
